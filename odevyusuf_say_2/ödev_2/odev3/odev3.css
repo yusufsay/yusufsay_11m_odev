@@ -1,0 +1,94 @@
+body {
+    background-color: rgb(246, 215, 47);
+    margin: 0;
+    padding: 0;
+}
+
+#anaAlan {
+    display: grid;
+    width: 50vw;
+    height: 90vh;
+    grid-template-areas: 
+    "header header header"
+    "main main1 main2"
+    "footer footer1 footer2";
+    grid-template-rows: repeat(3,1fr);
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+h1 {
+    text-align: center;
+    
+    font-size: 2em;
+    letter-spacing: 15px;
+}
+
+.yazi-kalin {
+    border-width: 3px;
+    border-style: solid;
+    padding: 10px;
+}
+
+main > header {
+    text-align: left;
+    padding-left: 10px;
+}
+
+main > * {
+    background-color: rgb(155, 218, 253);
+   
+    font-size: 1.2em;
+    font-weight: 800;
+    border-radius: 20px;
+    padding: 15px;
+    margin: 5px;
+}
+
+header {
+    grid-area: header;
+}
+
+:nth-child(2) {
+    grid-area: main;
+}
+
+:nth-child(3) {
+    grid-area: main1;
+}
+
+:nth-child(4) {
+    grid-area: main2;
+}
+
+:nth-child(5) {
+    grid-area: footer;
+}
+
+:nth-child(6) {
+    grid-area: footer1;
+}
+
+:nth-child(7) {
+    grid-area: footer2;
+}
+
+@media (max-width: 600px) {
+    #anaAlan {
+        width: auto;
+        height: auto;
+        grid-template-areas: 
+        "header"
+        "header"
+        "header"
+        "main"
+        "main1"
+        "main2"
+        "footer"
+        "footer1"
+        "footer2";
+        grid-template-columns: 1fr;
+    }
+}
